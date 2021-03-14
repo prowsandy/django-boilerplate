@@ -7,7 +7,6 @@ from django.utils import timezone
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.db.models import Sum,F,FloatField,Q
-from django.contrib.auth.hashers import check_password
 from django.views import View
 from django.views.generic import DetailView
 from django.utils.decorators import method_decorator
