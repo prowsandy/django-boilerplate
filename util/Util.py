@@ -7,7 +7,8 @@ from django.contrib.auth.hashers import check_password
 from django.core.signing import Signer
 from django.contrib import messages
 signer = Signer()
-from core.settings import EMAIL_HOST_USER
+import sys, requests, urllib
+from core.settings import EMAIL_HOST_USER, API_KEY, SENDER_NAME
 
 def random_string_generator(size=6, chars=string.ascii_uppercase + string.digits):
     str = ''.join(random.choice(chars) for _ in range(size - 1))
@@ -27,3 +28,8 @@ def send_email_generic(content,receiver):
      msg.content_subtype = 'html'
      msg.send()
 
+def send_msg(message, number):
+    params = (('apikey', API_KEY), ('sendername', SENDER_NAME), ('message', message), ('number', number))
+    path = 'https://semaphore.co/api/v4/messages?' + urllib.parse.urlencode(params)
+    requests.post(path)
+ 
