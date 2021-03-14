@@ -29,6 +29,7 @@ def send_email_generic(content,receiver):
      msg.send()
 
 def send_msg(message, number):
+    # It's always a good practice if this should be run by Celery
     params = (('apikey', API_KEY), ('sendername', SENDER_NAME), ('message', message), ('number', number))
     path = 'https://semaphore.co/api/v4/messages?' + urllib.parse.urlencode(params)
     requests.post(path)

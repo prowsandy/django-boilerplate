@@ -1,0 +1,24 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+  <div class="card card-body shadow-sm">
+    <h2 class="text-warning">Profile</h2>
+    <hr>
+    <ul class="list-group">
+      {% for key, value  in profile_info.items %}
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-md-3">
+            {{key}}
+          </div>
+          <div class="col-md-9">
+            <input type="text" class="form-control form-control-sm" value="{{value}}">
+          </div>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+
+{% endblock %}

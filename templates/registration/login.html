@@ -5,10 +5,14 @@
 <br>
 <br>
 
-    <div class="d-flex justify-content-center">
-      <div class="col-md-6 col-sm-10">
-    
-        <div class="shadow p-3 bg-white rounded">
+
+<div class="container">
+
+  <div class="shadow bg-white">
+    <div class="row no-gutters">
+      <div class="col-5">
+
+        <div class="p-4 mt-4 mb-4">
           <h4 class="text-muted font_mont">Member Login</h4>
           <hr>
           <form method="post">
@@ -37,15 +41,26 @@
             <button type="submit" class="btn btn-info btn-block" name="button">Login</button>
 
           </form>
+            <br>
+            <center>No account? <a href="{% url 'signup' %}">Sign Up here</a></center>
+        </div>
 
-          <br>
-
+      </div>
+      <div class="col-7" style="background-image: url(https://i.pinimg.com/736x/7f/99/cb/7f99cbd17100174bb26d9433e7ed1388.jpg);background-position: center;background-repeat: no-repeat; background-size: cover;">
+        <div >
 
         </div>
-        <br>
-        <center>No account? <a href="{% url 'signup' %}">Sign Up here</a></center>
       </div>
     </div>
+  </div>
+
+</div>
+
+
+
+
+
+
 
 
 
