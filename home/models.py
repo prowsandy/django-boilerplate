@@ -13,6 +13,9 @@ class User(AbstractUser):
     gender = models.CharField(max_length=15, choices=GENDER, null=True, blank=True)
     address = models.TextField(null=True, blank=True)
 
+    def get_full_name(self):
+        return "{}, {}".format(self.first_name,self.last_name)
+
     def get_name_is_empty(self):
         if not self.first_name or not self.last_name:
             return False

@@ -23,10 +23,11 @@ class Profile(View):
             messages.error(request, "Please complete your profile")
 
         profile_info = {}
-        profile_info['First Name'] = request.user.first_name
-        profile_info['Last Name'] = request.user.last_name
-        profile_info['Username'] = request.user.username
+    
+        profile_info['Address'] = request.user.address
         profile_info['Email'] = request.user.email
+        profile_info['Gender'] = request.user.gender
+        profile_info['Phone number'] = request.user.phone_number
         context = {
             'profile_info':profile_info
         }
